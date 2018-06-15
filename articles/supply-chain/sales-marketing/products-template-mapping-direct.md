@@ -81,7 +81,11 @@ The **Is Externally Maintained** field helps guarantee that only quotations and 
 Externally maintained products are automatically added to the first valid price list that has the same currency. Price lists are organized alphabetically by name. The product sales price from Finance and Operations is used as the price on the price list. Therefore, there must be a price list in Sales for every product sales currency in Finance and Operations. The currency on the released sellable products is set to the accounting currency in the legal entity that the product is exported from.
 
 > [!NOTE]
-> Product synchronization won't succeed unless there is a price list that has a matching currency.
+> Product synchronization won't succeed unless there is a price list that has a matching currency. 
+
+> If you want to control the used price list with the integration this can be achieved by mapping the pricelevelid.name [Default Price List (Name)] in the Data Integration project. Note that the input has to be all in lower case. 
+
+> E.g. defaulting to a price list in Sales named ‘Standard’ would be: Destination field: pricelevelid.name [Default Price List (Name)] and Map type: [ { "transformType": "Default", "defaultValue": "standard" } ]
 
 ## Preconditions and mapping setup
 
