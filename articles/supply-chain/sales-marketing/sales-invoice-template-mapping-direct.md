@@ -72,6 +72,10 @@ The following synchronization tasks are required before synchronization of sales
 
 Sales invoices are created in Finance and Operations and synchronized to Sales.
 
+In Finance and operations, filters help guarantee that only the relevant sales orders are included in the synchronization:
+
+- The invoicing customer have to originate from Sales for the invoice to be included in the synchronization. In Finance and Operations, the InvoiceCustomerIsExternallyMaintained field is used to filter invoices from the data entities.
+
 > [!NOTE]
 > Currently, tax that is related to charges on the sales invoice header isn't included in the synchronization from Finance and Operations to Sales. Sales doesn't support tax information at the header level. However, tax that is related to charges at the line level is included in the synchronization.
 
